@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:layout_width="225dp"
+    android:layout_height="200dp"
+    android:padding="12dp"
+
+    tools:context="br.usjt.deswebmob.sinbot.Dialogo">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/caixaDialogo"
+        android:gravity="center_horizontal"
+        android:textSize="@dimen/font_medium"
+        android:paddingBottom="12dp"/>
+
+    <Button
+        android:id="@+id/btn_finish_dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btnOk"
+        android:layout_gravity="center_horizontal"
+        android:onClick="finishDialog"/>
+
+</LinearLayout>
