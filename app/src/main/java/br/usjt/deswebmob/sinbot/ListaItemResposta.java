@@ -22,13 +22,11 @@ public class ListaItemResposta extends AppCompatActivity {
             public void onClick(View v) {
                 contador = contador + 1;
                 if(contador >= 3){
-                    Intent intent = new Intent(ListaItemResposta.this, DialogoDesculpas.class);
+                    Intent intent = new Intent(ListaItemResposta.this, ChamadoAtendimento.class);
                     startActivity(intent);
-                    System.out.println(contador);
                 }else{
                     Intent intent = new Intent(ListaItemResposta.this, DialogoReprovado.class);
                     startActivity(intent);
-                    System.out.println(contador);
                 }
                 System.out.println(contador);
             }

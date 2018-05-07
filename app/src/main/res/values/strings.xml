@@ -10,6 +10,7 @@
     <string name="caixaDialogoAprovado">Fico feliz em ajudar. Será que posso ajudar em mais alguma coisa?.</string>
     <string name="caixaDialogoReprovado">Desculpe, acho que não entendi bem sua pergunta, poderia perguntar novamente por favor?.</string>
     <string name="caixaDialogoFinal">Obrigado!\nJá recebemos o seu chamado\nNosso tempo de resposta é de no máximo 2 dias úteis.</string>
+    <string name="perguntaRetardada">Desculpe não entendi sua pergunta, pode repetir?</string>
     <string name="btnOk">Ok</string>
     <string name="descricao">Por favor nos diga sua duvida.\nNosso prazo para resposta é de até 2 dias úteis.</string>
     <string name="nome">Nome:</string>

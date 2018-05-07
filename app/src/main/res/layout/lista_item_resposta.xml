@@ -1,38 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
-
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="5dp">
 
     <com.github.library.bubbleview.BubbleTextView
         android:id="@+id/txtMensagem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:padding="10dp"
         android:textColor="#FFF"
-        android:layout_alignParentLeft="true"
-        app:arrowWidth="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:angle="8dp"
-        app:arrowHeight="10dp"
-        app:arrowPosition="14dp"
-        app:arrowLocation="left"
         app:arrowCenter="true"
-        app:bubbleColor="@color/colorPrimaryDark"/>
+        app:arrowHeight="10dp"
+        app:arrowLocation="left"
+        app:arrowPosition="14dp"
+        app:arrowWidth="8dp"
+        app:bubbleColor="@color/colorPrimaryDark" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/avaliacao"
-        android:layout_marginTop="45dp"/>
+        android:textColor="#444"
+        android:layout_marginTop="5dp"/>
     <Button
         android:id="@+id/aprovado"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/bt_sucess"
         android:textColor="@color/sucess"
         android:text="@string/btnSim"/>
@@ -42,9 +43,9 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginLeft="100dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="-30dp"
         android:background="@drawable/bt_insucess"
         android:onClick="finishDialog"
         android:text="@string/btnNao"
         android:textColor="@color/colorPrimaryDark" />
-</RelativeLayout>
+</LinearLayout>

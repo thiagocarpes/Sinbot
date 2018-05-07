@@ -57,7 +57,8 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimaryDark"
             android:textColor="@color/branco"
-            android:text="Enviar"/>
+            android:text="Enviar"
+            android:onClick="sendToDB"/>
 
 
 </LinearLayout>

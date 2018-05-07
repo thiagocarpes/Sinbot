@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "589854517396",
+    "firebase_url": "https://sinbot-713d2.firebaseio.com",
+    "project_id": "sinbot-713d2",
+    "storage_bucket": "sinbot-713d2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:589854517396:android:619aaba2c1c6476c",
+        "android_client_info": {
+          "package_name": "br.usjt.deswebmob.sinbot"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "589854517396-g57f22454o2fsnabg4o6c7rb6v3mfdg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.usjt.deswebmob.sinbot",
+            "certificate_hash": "366ad94fc4607b48c9f619cc6bc616f14714f737"
+          }
+        },
+        {
+          "client_id": "589854517396-td83u6njpf1gaabi1c1uqf1tn7plj559.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNDRWHlps-L6mNl3_kIkPwVdzlnE1P7HY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "589854517396-td83u6njpf1gaabi1c1uqf1tn7plj559.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

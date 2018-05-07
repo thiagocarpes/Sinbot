@@ -68,7 +68,7 @@ public class ChatAdapter extends BaseAdapter{
                     public void onClick(View v) {
                         contador = contador + 1;
                         if(contador >= 3){
-                            Intent intent = new Intent(parent.getContext(), DialogoDesculpas.class);
+                            Intent intent = new Intent(parent.getContext(), ChamadoAtendimento.class);
                             parent.getContext().startActivity(intent);
                             System.out.println(contador);
                         }else{
