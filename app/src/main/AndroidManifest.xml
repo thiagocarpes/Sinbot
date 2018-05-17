@@ -17,7 +17,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Chatbot"/>
+        <activity android:name=".Chatbot"
+                  android:configChanges="orientation|keyboardHidden|screenSize"/>
         <activity
             android:name=".Dialogo"
             android:theme="@android:style/Theme.Holo.Dialog" />
