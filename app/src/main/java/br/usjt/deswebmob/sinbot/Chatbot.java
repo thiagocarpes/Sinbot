@@ -1,6 +1,7 @@
 package br.usjt.deswebmob.sinbot;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -52,7 +53,11 @@ public class Chatbot extends AppCompatActivity {
         list_chat.add(chat);
         new AnwserQuestion().execute(list_chat);
 
+        System.out.println(list_chat);
+
     }
+
+
 
 
     public void sendQuestion(View view){
@@ -127,7 +132,7 @@ public class Chatbot extends AppCompatActivity {
 
             try {
 
-                double score = 0.0;
+                double score = 35.0;
                 int id = 0;
                 JSONObject jObject = new JSONObject(json);
                 JSONArray jArray = jObject.getJSONArray("answers");
