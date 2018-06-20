@@ -6,9 +6,10 @@ package br.usjt.deswebmob.sinbot;
 
 public class Chat {
     public String mensagem;
-    public boolean isSend;
+    public int isSend;
+    public  int contador;
 
-    public Chat(String mensagem, boolean isSend) {
+    public Chat(String mensagem, int isSend) {
         this.mensagem = mensagem;
         this.isSend = isSend;
     }
@@ -24,11 +25,19 @@ public class Chat {
         this.mensagem = mensagem;
     }
 
-    public boolean isSend() {
+    public int isSend() {
         return isSend;
     }
 
-    public void setSend(boolean send) {
+    public void setSend(int send) {
         isSend = send;
+    }
+
+    public int getContador() {
+        return contador;
+    }
+
+    public void setContador(int contador) {
+        this.contador = contador;
     }
 }

@@ -1,12 +1,22 @@
 package br.usjt.deswebmob.sinbot;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 
 import com.github.library.bubbleview.BubbleTextView;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -17,13 +27,17 @@ import java.util.List;
 public class ChatAdapter extends BaseAdapter{
     private List<Chat> lista_chat;
     private Context context;
+    private int contador = 0;
     private LayoutInflater layoutInflater;
+
+
 
     public ChatAdapter(List<Chat> lista_chat, Context context) {
         this.lista_chat = lista_chat;
         this.context = context;
         layoutInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+
 
     @Override
     public int getCount() {
@@ -41,21 +55,53 @@ public class ChatAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, final ViewGroup parent) {
         View view = convertView;
 
         if(view == null){
-            if (lista_chat.get(position).isSend){
-                view = layoutInflater.inflate(R.layout.lista_item_pergunta, null);
+            if (lista_chat.get(position).isSend == 3) {
+                view = layoutInflater.inflate(R.layout.lista_item, null);
+
+                BubbleTextView text_message = (BubbleTextView) view.findViewById(R.id.txtMensagem);
+
+                text_message.setText(lista_chat.get(position).mensagem);
+            }if(lista_chat.get(position).isSend == 2){
+                view = layoutInflater.inflate(R.layout.lista_item_resposta, null);
 
                 BubbleTextView text_message = (BubbleTextView)view.findViewById(R.id.txtMensagem);
 
                 text_message.setText(lista_chat.get(position).mensagem);
 
-            }else {
-                view = layoutInflater.inflate(R.layout.lista_item_resposta, null);
+                Button btnNo = (Button) view.findViewById(R.id.reprovado);
+                btnNo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        contador = contador + 1;
+                        if(contador >= 3){
+                            Intent intent = new Intent(parent.getContext(), ChamadoAtendimento.class);
+                            parent.getContext().startActivity(intent);
+                            System.out.println(contador);
+                        }else{
+                            Intent intent = new Intent(parent.getContext(), DialogoReprovado.class);
+                            parent.getContext().startActivity(intent);
+                            System.out.println(contador);
+                        }
 
-                BubbleTextView text_message = (BubbleTextView)view.findViewById(R.id.txtMensagem);
+                    }
+                });
+
+                Button btnYes = (Button) view.findViewById(R.id.aprovado);
+                btnYes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(parent.getContext(), DialogoAprovado.class);
+                        parent.getContext().startActivity(intent);
+                    }
+                });
+            }if(lista_chat.get(position).isSend == 1){
+                view = layoutInflater.inflate(R.layout.lista_item_pergunta, null);
+
+                BubbleTextView text_message = (BubbleTextView) view.findViewById(R.id.txtMensagem);
 
                 text_message.setText(lista_chat.get(position).mensagem);
             }
