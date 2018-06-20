@@ -18,6 +18,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -27,10 +28,13 @@ import java.util.List;
 public class ChatAdapter extends BaseAdapter{
     private List<Chat> lista_chat;
     private Context context;
-    private int contador = 0;
+    private  int contador = 0;
+
+
+
     private LayoutInflater layoutInflater;
 
-
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
 
     public ChatAdapter(List<Chat> lista_chat, Context context) {
         this.lista_chat = lista_chat;
@@ -55,7 +59,7 @@ public class ChatAdapter extends BaseAdapter{
     }
 
     @Override
-    public View getView(int position, View convertView, final ViewGroup parent) {
+    public View getView(final int position, View convertView, final ViewGroup parent) {
         View view = convertView;
 
         if(view == null){
@@ -78,13 +82,19 @@ public class ChatAdapter extends BaseAdapter{
                     public void onClick(View v) {
                         contador = contador + 1;
                         if(contador >= 3){
-                            Intent intent = new Intent(parent.getContext(), ChamadoAtendimento.class);
+                            String id = mDatabase.push().getKey();
+
+                            lista_chat.get(position).setContador(contador);
+
+                            mDatabase.child("chamadosSolucao").child(id).setValue(lista_chat.get(position));
+
+                            System.out.println(lista_chat.get(position));
+
+                            Intent intent = new Intent(parent.getContext(), DialogoDesculpas.class);
                             parent.getContext().startActivity(intent);
-                            System.out.println(contador);
                         }else{
                             Intent intent = new Intent(parent.getContext(), DialogoReprovado.class);
                             parent.getContext().startActivity(intent);
-                            System.out.println(contador);
                         }
 
                     }
@@ -94,6 +104,12 @@ public class ChatAdapter extends BaseAdapter{
                 btnYes.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        String id = mDatabase.push().getKey();
+
+                        lista_chat.get(position).setContador(contador);
+
+                        mDatabase.child("chamadosSolucao").child(id).setValue(lista_chat.get(position));
+
                         Intent intent = new Intent(parent.getContext(), DialogoAprovado.class);
                         parent.getContext().startActivity(intent);
                     }

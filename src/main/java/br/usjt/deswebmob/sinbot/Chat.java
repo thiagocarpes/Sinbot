@@ -8,6 +8,7 @@ public class Chat {
     public String mensagem;
     public int isSend;
     public  int contador;
+    public String data;
 
     public Chat(String mensagem, int isSend) {
         this.mensagem = mensagem;
@@ -39,5 +40,13 @@ public class Chat {
 
     public void setContador(int contador) {
         this.contador = contador;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
     }
 }

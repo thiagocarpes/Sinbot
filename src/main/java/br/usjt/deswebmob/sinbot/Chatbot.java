@@ -32,8 +32,10 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class Chatbot extends AppCompatActivity {
@@ -50,6 +52,8 @@ public class Chatbot extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
     DatabaseReference database;
+
+    String mydate = java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,9 +176,12 @@ public class Chatbot extends AppCompatActivity {
                 JSONObject oneObject = jArray.getJSONObject(id);
                 String answer = (oneObject.getDouble("score")==0.0) ? getString(R.string.perguntaRetardada) : this.format(oneObject.getString("answer")) ;
 
-
+                SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd");
+                Date data = new Date();
+                String dataFormatada = formataData.format(data);
 
                 Chat chat = new Chat(answer, 2);
+                chat.setData(dataFormatada);
                 list_chat.add(chat);
                 new AnwserQuestion().execute(list_chat);
 

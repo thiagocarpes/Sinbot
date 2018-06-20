@@ -16,5 +16,7 @@ public class DialogoReprovado extends Activity {
 
     public void finishDialog(View v) {
         DialogoReprovado.this.finish();
+
+
     }
 }
