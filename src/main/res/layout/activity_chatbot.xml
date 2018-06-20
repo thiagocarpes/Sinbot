@@ -9,20 +9,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:padding="10dp"
 
     tools:context="br.usjt.deswebmob.sinbot.Chatbot">
 
     <ImageView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo"
-        android:layout_marginTop="30dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:paddingTop="5dp"
+        android:src="@drawable/logo"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp">
+        android:padding="10dp">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"

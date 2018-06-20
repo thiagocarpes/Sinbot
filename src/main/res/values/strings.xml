@@ -6,8 +6,11 @@
                             \n \nQual é o seu nome?</string>
     <string name="btnEnviar">Enviar</string>
     <string name="placeholderPergunta">Escreva a sua pergunta:</string>
-    <string name="caixaDialogo">Deculpe, não conseguimos te ajudar.\n Por favor preencha o formulário da tela seguinte para encaminhar sua solicitação para um de nossos atendentes.</string>
+    <string name="caixaDialogo">Deculpe, não conseguimos te ajudar.\nPor favor preencha o formulário da tela seguinte para encaminhar sua solicitação para um de nossos atendentes.</string>
+    <string name="caixaDialogoAprovado">Fico feliz em ajudar.\nSerá que posso ajudar em mais alguma coisa?</string>
+    <string name="caixaDialogoReprovado">Desculpe, acho que não entendi bem sua pergunta, poderia perguntar novamente por favor?</string>
     <string name="caixaDialogoFinal">Obrigado!\nJá recebemos o seu chamado\nNosso tempo de resposta é de no máximo 2 dias úteis.</string>
+    <string name="perguntaRetardada">Desculpe não entendi sua pergunta, pode repetir?</string>
     <string name="btnOk">Ok</string>
     <string name="descricao">Por favor nos diga sua duvida.\nNosso prazo para resposta é de até 2 dias úteis.</string>
     <string name="nome">Nome:</string>

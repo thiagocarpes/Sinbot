@@ -6,4 +6,6 @@
     <color name="textColor">#585758</color>
     <color name="bgScrollView">#f3f2f3</color>
     <color name="branco">#ffffff</color>
+    <color name="sucess">#28a745</color>
+    <color name="insucess">#f1f1f1</color>
 </resources>
